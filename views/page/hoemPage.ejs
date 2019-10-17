@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="/js/homePage.js"></script>
+</head>
+
+<body>
+    <%- include('../components/nav'); -%>
+    <div class="container my-5 bg-white">
+        <div class="row justify-content-center p-3">
+            <div class="col-4">
+                <button id="machineButton" type="button" class="btn btn-outline-info btn-block active">Machine</button>
+            </div>
+            <div class="col-4">
+                <button id="componentButton" type="button" class="btn btn-outline-info btn-block">Component</button>
+            </div>
+            <div class="col-4">
+                <button id="vendorButton" type="button" class="btn btn-outline-info btn-block">Vendor</button>
+            </div>
+        </div>
+        <div class="row justify-content-center p-3" >
+            <!-- <h2 class="p-3">Machine</h2> -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span id="searchHint" class="input-group-text bg-info text-light">Machine</span>
+                </div>
+                <input id="searchInput" type="text" class="form-control" placeholder="Input Machine Name" aria-label="Machine Name" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button id="searchButton" class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="displayData" class="container p-5"></div>
+</body>
+<footer class="p-3"></footer>
+<style>
+    #displayData{
+        display: none;
+        background: #F1E8B8;
+    }
+</style>
+</html>

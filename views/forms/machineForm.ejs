@@ -1,0 +1,44 @@
+<script src="/js/machineForm.js"></script>
+
+<div class="container bg-white my-5">
+    <div class="row justify-content-center p-4">
+        <h1>Machine</h1>
+    </div>
+    <div class="row justify-content-center p-3">
+        <form method="POST" action="/post" style="width: 60%;">
+            <div class="form-group">
+                <label for="inputMachineName">Machine Name</label>
+                <input type="text" name='machineName' class="form-control" id="inputMachineName" placeholder="Enter Machine Name" required>
+            </div>
+            <div class="form-group">
+                <label for="inputMachineDescription">Machine Description</label>
+                <input type="text" name='machineDescription' class="form-control" id="inputMachineDescription" placeholder="Enter Machine Description" required>
+            </div>
+            <div class="form-group">
+                <label for="inputMachineCountry">Machine Country</label>
+                <input type="text" name='MachineCountry' class="form-control" id="inputMachineCountry" placeholder="Enter Machine Country" required>
+            </div>
+            <div class="form-group">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="componentList">Component</label>
+                    </div>
+                    <select class="custom-select" id="componentList" name="componentList" onchange="vendorchoicechange()">
+                        <option selected>Choose component...</option>
+                    </select>
+                    <select class="custom-select" id="vendorList" name="vendorList">
+                        <option selected>Choose vendor...</option>
+                    </select>
+                    <input id='compontentNumber' name="compontentNumber" type="number" class="form-control"  placeholder="Number of Component" min="1" max="1000">
+                    <div class="input-group-append">
+                        <button id="buttonAdd" class="btn btn-outline-success" type="button">Add</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Machine component list -->
+            <ul id="list"></ul>
+            
+            <button id="buttonSubmit" class="btn btn-primary mb-3 btn-block my-5" type="submit">Submit</button>
+        </form>
+    </div>
+</div>

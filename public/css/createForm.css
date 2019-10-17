@@ -1,0 +1,27 @@
+li{
+    line-height: 40px;
+    border-radius: 5px;
+}
+
+li:nth-child(2n){
+    background: #F2EEDA80;
+}
+i{
+    color: white;
+}
+span{
+    width: 0;
+    /* display: none; */
+    background: #e74c3c;
+    height: 40px;
+    transition: 0.2s linear;
+    opacity: 0;
+    border-radius: 5px;
+}
+
+li:hover span{
+    width: 40px;
+    color: red;
+    /* display: inline; */
+    opacity: 1;
+}
