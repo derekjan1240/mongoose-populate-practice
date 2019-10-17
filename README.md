@@ -29,7 +29,9 @@
 ### Vendor
 
 * List Types
+  * Vendor > All Components
   * Vendor > All Info
 
 * Path
+  * /list/vendor/:vendor/components
   * /list/vendor/:vendor/all
