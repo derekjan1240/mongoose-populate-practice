@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const keys = require('./config/keys');
 
 // Model
-const Pokemon = require('./models/pokemon-model');
 const Machine = require('./models/machine-model');
 const Component = require('./models/component-model');
 const Vendor = require('./models/vendor-model');

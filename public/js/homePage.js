@@ -70,7 +70,7 @@ function setSearchHint(hint){
 function searchData(e){
     let data = searchInput.value;
     displayDataSet('<h2 class="p-5">Searching ...</h2>');
-    fetch(`${e.target.searchUrl}/${data}/all`)
+    fetch(`${e.target.searchUrl}/${data}/components`)
     .then((res)=>{
         return res.json()
     }).then((myJson)=>{

@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Denormalization 
 const machineSchema = new Schema({
     name: String,
     description: String,
@@ -13,20 +12,10 @@ const machineSchema = new Schema({
         },
         componentCount: Number,
         componentVendor: {
-            type: Schema.Types.ObjectId,  // present machine's component's vendor
+            type: Schema.Types.ObjectId,  
             ref: "vendor"
         }
     }]
-    // component:[{
-    //     type: Schema.Types.ObjectId,
-    //     ref: "component"
-    // }],
-    // componentVendor:[{
-    //     type: Schema.Types.ObjectId,
-    //     ref: "vendor"
-    // }],
-    // componentCount:[String],
-    
 }, {
     timestamps: {createdAt: 'insert_date', updatedAt: 'update_date'}
 });
