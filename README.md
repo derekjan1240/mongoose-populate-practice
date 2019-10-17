@@ -10,7 +10,7 @@
   * Machine > Components & ComponentVendors
   * Machine > All Info
 
-* Routes
+* Path
   * /list/machine/:machine/MachineComponents
   * /list/machine/:machine/MachineVendors
   * /list/machine/:machine/MachineComponentsAndVendors
@@ -22,7 +22,7 @@
   * Component > ComponentVendors
   * Component > All Info
 
-* Routes
+* Path
   * /list/component/:component/ComponentVendors
   * /list/component/:component/all
 
@@ -31,5 +31,5 @@
 * List Types
   * Vendor > All Info
 
-* Routes
+* Path
   * /list/vendor/:vendor/all
