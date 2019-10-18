@@ -6,7 +6,6 @@
 2. Component: each component has many vendors.
 3. Vendor: each vendor has many components.
 
----
 
 ## Data Routes
 
@@ -46,7 +45,6 @@
   * /list/vendor/:vendor/components
   * /list/vendor/:vendor/all
 
----
 
 ## Page Routes
 
@@ -62,5 +60,3 @@
 * /form/machine > create machine form
 * /form/component > create component form
 * /form/vendor > create vendor form
-
----
