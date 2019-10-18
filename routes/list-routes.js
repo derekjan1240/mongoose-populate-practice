@@ -71,6 +71,28 @@ router.get('/component/:component/ComponentVendors', (req, res)=>{
     });
 });
 
+// Component > Machines
+router.get('/component/:component/machines', (req, res)=>{
+    Component.findOne({name: req.params.component})
+    .exec((err, component)=>{
+        if(err) throw err;
+        if(component){
+            Machine.find({"components.component": component._id})
+            .select({'components': 0, '_id': 0})
+            .exec((err, machine)=>{
+                if(err) throw err;
+                if(machine){
+                    res.send(machine)
+                }else{
+                    res.send(`${req.params.component} does not use in machines!`);
+                }
+            })
+        }else{
+            res.send(`Can not find ${req.params.vendor}`);
+        }   
+    });
+});
+
 // Machine > components
 router.get('/machine/:machine/MachineComponents', (req, res)=>{
     Machine.findOne({name: req.params.machine})
