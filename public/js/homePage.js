@@ -19,7 +19,8 @@ window.onload = function(){
     });
 
     // Defult
-    searchButton.searchUrl = '/list/machine'
+    searchButton.searchMode = 'machine';
+    searchButton.searchType = 'all';
 }
 
 function machineSearchMode(){
@@ -41,15 +42,18 @@ function setSearchMode(mode){
     switch (mode) {
         case 'Machine':
             machineButton.classList.add("active");
-            searchButton.searchUrl = '/list/machine'; 
+            searchButton.searchMode = 'machine'; 
+            searchButton.searchType = 'all';
             break;
         case 'Component':
             componentButton.classList.add("active");
-            searchButton.searchUrl = '/list/component';
+            searchButton.searchMode = 'component';
+            searchButton.searchType = 'all';
             break;
         case 'Vendor':
             vendorButton.classList.add("active");
-            searchButton.searchUrl = '/list/vendor';
+            searchButton.searchMode = 'vendor';
+            searchButton.searchType = 'components';
             break;
         default:
             console.log(`Out of ${mode} mode !`);
@@ -68,9 +72,8 @@ function setSearchHint(hint){
 }
 
 function searchData(e){
-    let data = searchInput.value;
     displayDataSet('<h2 class="p-5">Searching ...</h2>');
-    fetch(`${e.target.searchUrl}/${data}/components`)
+    fetch(`/list/${e.target.searchMode}/${searchInput.value}/${e.target.searchType}`)
     .then((res)=>{
         return res.json()
     }).then((myJson)=>{
