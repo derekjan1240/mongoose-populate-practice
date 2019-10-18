@@ -19,19 +19,21 @@
   * Machine > All Info
 
 * Path
-  * /list/machine/:machine/MachineComponents
-  * /list/machine/:machine/MachineVendors
-  * /list/machine/:machine/MachineComponentsAndVendors
+  * /list/machine/:machine/machineComponents
+  * /list/machine/:machine/machineVendors
+  * /list/machine/:machine/machineComponentsAndVendors
   * /list/machine/:machine/all
 
 ### Component
 
 * List Types
   * Component > ComponentVendors
+  * Component > Machines
   * Component > All Info
 
 * Path
-  * /list/component/:component/ComponentVendors
+  * /list/component/:component/componentVendors
+  * /list/component/:component/machines
   * /list/component/:component/all
 
 ### Vendor

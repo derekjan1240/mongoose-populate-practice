@@ -58,7 +58,7 @@ router.get('/component/:component/all', (req, res)=>{
 });
 
 // Component > vendors
-router.get('/component/:component/ComponentVendors', (req, res)=>{
+router.get('/component/:component/componentVendors', (req, res)=>{
     Component.findOne({name: req.params.component})
     .populate('vendor')
     .exec((err, component)=>{
@@ -94,7 +94,7 @@ router.get('/component/:component/machines', (req, res)=>{
 });
 
 // Machine > components
-router.get('/machine/:machine/MachineComponents', (req, res)=>{
+router.get('/machine/:machine/machineComponents', (req, res)=>{
     Machine.findOne({name: req.params.machine})
     .populate({
         path:'components.component',
@@ -111,7 +111,7 @@ router.get('/machine/:machine/MachineComponents', (req, res)=>{
 });
 
 // Machine > componentVendor
-router.get('/machine/:machine/MachineVendors', (req, res)=>{
+router.get('/machine/:machine/machineVendors', (req, res)=>{
     Machine.findOne({name: req.params.machine})
     .populate({
         path: 'components.componentVendor', 
@@ -129,7 +129,7 @@ router.get('/machine/:machine/MachineVendors', (req, res)=>{
 });
 
 // Machine > components & componentVendor
-router.get('/machine/:machine/MachineComponentsAndVendors', (req, res)=>{
+router.get('/machine/:machine/machineComponentsAndVendors', (req, res)=>{
     Machine.findOne({name: req.params.machine})
     .populate({
         path: 'components.component', 
